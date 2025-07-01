@@ -6,7 +6,7 @@
 
 4. Service layer applies business rules and coordinates operations.
 
-5.Service calls the appropriate MySQL or MongoDB repository.
+5. Service calls the appropriate MySQL or MongoDB repository.
 
 6. Repository interacts with the database to fetch or persist data.
 
