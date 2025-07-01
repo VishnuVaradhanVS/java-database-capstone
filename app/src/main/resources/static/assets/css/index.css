@@ -1,53 +1,158 @@
-/* this is the style sheet file for index.htlm  */
+/* index.css */
 
-/* 
-**Global Reset (`*`)**
+/* ========== GLOBAL RESET ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-* Remove all default margin and padding.
-* Use `border-box` for sizing to include padding and border in element size.
+/* ========== BASE STYLES ========== */
+html, body {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f9f9f9;
+}
 
-**Base (`html, body`)**
+/* ========== WRAPPER LAYOUT ========== */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
-* Set height to 100% for full viewport layout.
-* Use the `'Roboto'` sans-serif font for modern, clean typography.
+/* ========== HEADER AND FOOTER PLACEHOLDERS ========== */
+#header, #footer {
+  width: 100%;
+}
 
-**Layout Wrapper (`.wrapper`)**
+/* ========== MAIN SECTION ========== */
+.main-content {
+  flex-grow: 1;
+  padding: 40px;
+  background-image: url('../images/background/clinic-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
-* Use a vertical flexbox layout.
-* Ensure the wrapper covers at least the full height of the screen (`min-height: 100vh`).
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
-**Heading (`h2`)**
+/* ========== HEADING ========== */
+.main-content h2 {
+  font-size: 48px;
+  margin-bottom: 50px;
+  color: #003e3e;
+  font-weight: bold;
+  font-family: 'Alegreya', 'Roboto', sans-serif;
+}
 
-* Set a large font size (`48px`) for prominence.
-* Add a bottom margin of `50px` for spacing.
-* Use a dark teal color (`#003e3e`).
-* Make the font bold and use a blended font stack (`'Alegreya', 'Roboto', sans-serif`) for elegant styling.
+/* ========== BUTTONS ========== */
+button {
+  background-color: #015c5d;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  width: 200px;
+  margin-top: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-**Main Section (`.main-content`)**
+button:hover {
+  background-color: #A62B1F;
+}
 
-* Allow the section to grow to fill space with `flex-grow: 1`.
-* Add `40px` of internal padding.
-* Center content both horizontally and vertically using `justify-content` and `align-items`.
-* Display items in a column direction.
-* Center all text.
-* Apply a full-screen background image with:
+/* ========== DASHBOARD BUTTONS ========== */
+.dashboard-btn {
+  background-color: #015c5d;
+}
 
-  * `cover` size
-  * `center` positioning
-  * no repeat
-  * `fixed` attachment to keep image still during scroll
+.dashboard-btn:hover {
+  background-color: #003e3e;
+}
 
-**Buttons (`button`)**
+/* ========== MODAL STYLES ========== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
-* Style with a teal green background (`#015c5d`) and white text.
-* Remove borders and round the corners (`12px`).
-* Use `10px 20px` padding and set width to `200px`.
-* Add a top margin of `10px` for spacing.
-* Enable pointer cursor and readable font size (`16px`).
-* On hover, change background color to bold red (`#A62B1F`).
+.modal-content {
+  background-color: white;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
 
-**Dashboard Buttons (`.dashboard-btn`)**
+.close-button {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 28px;
+  color: #333;
+  cursor: pointer;
+}
 
-* Use the same base green background (`#015c5d`) as the default button.
-* On hover, darken the background to deep teal (`#003e3e`) for visual feedback.
- */
+.close-button:hover {
+  color: #A62B1F;
+}
+
+/* ========== FORM INPUTS AND DROPDOWNS ========== */
+.input-field,
+.select-dropdown {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.input-field:focus,
+.select-dropdown:focus {
+  outline: none;
+  border-color: #015c5d;
+}
+
+/* ========== CHECKBOX GROUP ========== */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* ========== MEDIA QUERIES FOR RESPONSIVENESS ========== */
+@media (max-width: 768px) {
+  .main-content h2 {
+    font-size: 32px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .modal-content {
+    margin: 30% auto;
+    padding: 20px;
+  }
+}
